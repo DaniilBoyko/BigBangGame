@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  bigbanggame.server:
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+      - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: "BigBangGame.Server"
+      dockerfile: Dockerfile
+    ports:
+      - "8000:5000"

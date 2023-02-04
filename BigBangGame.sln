@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBangGame.Server", "BigBangGame.Server\BigBangGame.Server.csproj", "{367EB8D8-3183-4636-A8A9-1E117DC20452}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{367EB8D8-3183-4636-A8A9-1E117DC20452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367EB8D8-3183-4636-A8A9-1E117DC20452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367EB8D8-3183-4636-A8A9-1E117DC20452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367EB8D8-3183-4636-A8A9-1E117DC20452}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D74F806F-EA04-4AF7-8FE2-9F87E602F1FD}
+	EndGlobalSection
+EndGlobal
