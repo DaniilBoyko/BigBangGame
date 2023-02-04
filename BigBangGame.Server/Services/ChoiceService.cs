@@ -6,12 +6,12 @@ using BigBangGame.Server.Services.Interfaces;
 
 namespace BigBangGame.Server.Services;
 
-public class ChoiceServices : IChoiceServices
+public class ChoiceService : IChoiceService
 {
     private readonly IMapper _mapper;
     private readonly ConcurrentDictionary<int, GameChoice> _choices = new();
 
-    public ChoiceServices(IMapper mapper)
+    public ChoiceService(IMapper mapper)
     {
         _mapper = mapper;
         _choices.GetOrAdd(1, new GameChoice(Id: 1, Name: "rock", BeatsChoiceIds: new[] {5, 3}));

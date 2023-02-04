@@ -24,7 +24,7 @@ public static class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddSingleton<IChoiceServices, ChoiceServices>();
+        builder.Services.AddSingleton<IChoiceService, ChoiceService>();
         builder.Services.AddSingleton<IPlayService, PlayService>();
         builder.Services.AddSingleton<IScoreboardService, ScoreboardService>();
 

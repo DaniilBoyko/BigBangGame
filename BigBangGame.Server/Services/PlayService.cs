@@ -5,20 +5,20 @@ namespace BigBangGame.Server.Services;
 
 public class PlayService : IPlayService
 {
-    private readonly IChoiceServices _choiceServices;
+    private readonly IChoiceService _choiceService;
     private readonly IScoreboardService _scoreboardService;
 
-    public PlayService(IChoiceServices choiceServices,
+    public PlayService(IChoiceService choiceService,
         IScoreboardService scoreboardService)
     {
-        _choiceServices = choiceServices;
+        _choiceService = choiceService;
         _scoreboardService = scoreboardService;
     }
 
     public ComputerGameResult PlayWithComputer(int playerChoiceId)
     {
-        var computerChoice = _choiceServices.GetRandomGameChoice();
-        var playerChoice = _choiceServices.GetGameChoiceById(playerChoiceId);
+        var computerChoice = _choiceService.GetRandomGameChoice();
+        var playerChoice = _choiceService.GetGameChoiceById(playerChoiceId);
 
         if (playerChoice == null)
         {
