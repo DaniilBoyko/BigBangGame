@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBangGame.Server", "BigBangGame.Server\BigBangGame.Server.csproj", "{367EB8D8-3183-4636-A8A9-1E117DC20452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBangGame.Server", "BigBangGame.Server\BigBangGame.Server.csproj", "{367EB8D8-3183-4636-A8A9-1E117DC20452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBangGame.Server.Tests", "BigBangGame.Server.Tests\BigBangGame.Server.Tests.csproj", "{1C1EC335-637A-48D7-8189-6CC9CF364069}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{367EB8D8-3183-4636-A8A9-1E117DC20452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{367EB8D8-3183-4636-A8A9-1E117DC20452}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{367EB8D8-3183-4636-A8A9-1E117DC20452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C1EC335-637A-48D7-8189-6CC9CF364069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C1EC335-637A-48D7-8189-6CC9CF364069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C1EC335-637A-48D7-8189-6CC9CF364069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C1EC335-637A-48D7-8189-6CC9CF364069}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
