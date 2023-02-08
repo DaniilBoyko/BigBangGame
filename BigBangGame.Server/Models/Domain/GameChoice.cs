@@ -1,3 +1,8 @@
 ﻿namespace BigBangGame.Server.Models.Domain;
 
-public record class GameChoice(int Id, string Name, int[] BeatsChoiceIds);
+public class GameChoice
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int[] BeatsChoiceIds { get; set; }
+}

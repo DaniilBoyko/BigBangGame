@@ -1,24 +1,28 @@
 ﻿using BigBangGame.Server.Models.Domain;
+using BigBangGame.Server.Models.Enums;
 using BigBangGame.Server.Services.Interfaces;
 
 namespace BigBangGame.Server.Services;
 
 public class PlayService : IPlayService
 {
-    private readonly IChoiceService _choiceService;
+    private readonly IChoiceStorage _choiceStorage;
     private readonly IScoreboardService _scoreboardService;
+    private readonly IChoiceSelector _choiceSelector;
 
-    public PlayService(IChoiceService choiceService,
-        IScoreboardService scoreboardService)
+    public PlayService(IChoiceStorage choiceStorage,
+        IScoreboardService scoreboardService,
+        IChoiceSelector choiceSelector)
     {
-        _choiceService = choiceService;
+        _choiceStorage = choiceStorage;
         _scoreboardService = scoreboardService;
+        _choiceSelector = choiceSelector;
     }
 
     public ComputerGameResult PlayWithComputer(int playerChoiceId)
     {
-        var computerChoice = _choiceService.GetRandomGameChoice();
-        var playerChoice = _choiceService.GetGameChoiceById(playerChoiceId);
+        var computerChoice = _choiceSelector.GetRandomGameChoice();
+        var playerChoice = _choiceStorage.GetGameChoiceById(playerChoiceId);
 
         if (playerChoice == null)
         {
@@ -50,9 +54,11 @@ public class PlayService : IPlayService
     {
         if (firstChoice.Id == secondChoice.Id)
         {
-            return "tie";
+            return GameResult.Tie.ToString();
         }
 
-        return firstChoice.BeatsChoiceIds.Contains(secondChoice.Id) ? "win" : "lose";
+        return firstChoice.BeatsChoiceIds.Contains(secondChoice.Id)
+            ? GameResult.Win.ToString()
+            : GameResult.Lose.ToString();
     }
 }

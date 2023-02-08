@@ -8,7 +8,12 @@ public static class ChoiceNameExtensions
     public static GameChoice ToGameChoice(this ChoiceName choiceName, params int[] beatsChoiceIds)
     {
         var id = (int)choiceName;
-        var name = choiceName.ToString();
-        return new GameChoice(id, name, beatsChoiceIds);
+        var name = choiceName.ToString().ToLower();
+        return new GameChoice
+        {
+            Id = id,
+            Name = name,
+            BeatsChoiceIds = beatsChoiceIds
+        };
     }
 }

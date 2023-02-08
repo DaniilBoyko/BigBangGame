@@ -2,7 +2,7 @@
 
 public static class ListExtensions
 {
-    public static T GetRandom<T>(this IReadOnlyList<T> collection)
+    public static T GetRandom<T>(this IList<T> collection)
     {
         return collection[Random.Shared.Next(0, collection.Count)];
     }

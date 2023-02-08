@@ -7,22 +7,25 @@ namespace BigBangGame.Server.Controllers;
 [ApiController]
 public class ChoiceController : ControllerBase
 {
-	private readonly IChoiceService _choiceService;
+	private readonly IChoiceStorage _choiceStorage;
+    private readonly IChoiceSelector _choiceSelector;
 
-	public ChoiceController(IChoiceService choiceService)
-	{
-		_choiceService= choiceService;
-	}
+    public ChoiceController(IChoiceStorage choiceStorage,
+        IChoiceSelector choiceSelector)
+    {
+        _choiceStorage= choiceStorage;
+        _choiceSelector = choiceSelector;
+    }
 
 	[HttpGet("/choices")]
 	public IEnumerable<Choice> GetChoices()
 	{
-		return _choiceService.GetAvailableChoices();
+		return _choiceStorage.GetChoices();
 	}
 
     [HttpGet("/choice")]
     public Choice GetRandomChoice()
     {
-        return _choiceService.GetRandomChoice();
+        return _choiceSelector.GetRandomChoice();
     }
 }

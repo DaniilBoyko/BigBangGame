@@ -2,10 +2,8 @@
 
 namespace BigBangGame.Server.Services.Interfaces;
 
-public interface IChoiceService
+public interface IChoiceSelector
 {
-    IEnumerable<Choice> GetAvailableChoices();
     Choice GetRandomChoice();
     GameChoice GetRandomGameChoice();
-    GameChoice? GetGameChoiceById(int choiceId);
 }

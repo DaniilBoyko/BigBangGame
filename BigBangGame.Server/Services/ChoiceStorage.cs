@@ -7,12 +7,12 @@ using BigBangGame.Server.Services.Interfaces;
 
 namespace BigBangGame.Server.Services;
 
-public class ChoiceService : IChoiceService
+public class ChoiceStorage : IChoiceStorage
 {
     private readonly IMapper _mapper;
     private readonly ConcurrentDictionary<int, GameChoice> _choices = new();
 
-    public ChoiceService(IMapper mapper)
+    public ChoiceStorage(IMapper mapper)
     {
         _mapper = mapper;
         _choices.GetOrAdd((int)ChoiceName.Rock, ChoiceName.Rock.ToGameChoice(5, 3));
@@ -22,25 +22,24 @@ public class ChoiceService : IChoiceService
         _choices.GetOrAdd((int)ChoiceName.Lizard, ChoiceName.Lizard.ToGameChoice(4, 2));
     }
 
-    public IEnumerable<Choice> GetAvailableChoices()
+    public IList<Choice> GetChoices()
     {
         return _choices.Select(x => _mapper.Map<Choice>(x.Value)).ToArray();
     }
 
-    public Choice GetRandomChoice()
+    public IList<GameChoice> GetGameChoices()
     {
-        var randomChoice = _choices.Select(x => x.Value).ToArray().GetRandom();
-        return _mapper.Map<Choice>(randomChoice);
-    }
-
-    public GameChoice GetRandomGameChoice()
-    {
-        return _choices.Select(x => x.Value).ToArray().GetRandom();
+        return _choices.Select(x => x.Value).ToArray();
     }
 
     public GameChoice? GetGameChoiceById(int choiceId)
     {
         _choices.TryGetValue(choiceId, out var choice);
         return choice;
+    }
+
+    public GameChoice? GetGameChoiceByName(ChoiceName choiceName)
+    {
+        return GetGameChoiceById((int)choiceName);
     }
 }

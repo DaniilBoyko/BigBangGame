@@ -24,9 +24,10 @@ public static class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddSingleton<IChoiceService, ChoiceService>();
+        builder.Services.AddSingleton<IChoiceStorage, ChoiceStorage>();
         builder.Services.AddSingleton<IPlayService, PlayService>();
         builder.Services.AddSingleton<IScoreboardService, ScoreboardService>();
+        builder.Services.AddSingleton<IChoiceSelector, ChoiceSelector>();
 
         var app = builder.Build();
 
