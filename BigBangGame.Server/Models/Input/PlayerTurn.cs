@@ -2,5 +2,5 @@
 
 public class PlayerTurn
 {
-    public int? ChoiceId { get; set; }
+    public int? Player { get; set; }
 }

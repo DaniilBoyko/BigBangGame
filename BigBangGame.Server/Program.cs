@@ -29,6 +29,17 @@ public static class Program
         builder.Services.AddSingleton<IScoreboardService, ScoreboardService>();
         builder.Services.AddSingleton<IChoiceSelector, ChoiceSelector>();
 
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("CorsPolicy",
+                builder =>
+                    builder.WithOrigins("https://codechallenge.boohma.com")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+
+            );
+        });
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -39,6 +50,8 @@ public static class Program
         }
 
         app.UseAuthorization();
+
+        app.UseCors("CorsPolicy");
 
         app.MapControllers();
 

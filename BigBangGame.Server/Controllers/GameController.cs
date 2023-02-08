@@ -18,6 +18,6 @@ public class GameController : ControllerBase
     [HttpPost("/play")]
     public ComputerGameResult PlayGame([FromBody] PlayerTurn playerTurn)
     {
-        return _playService.PlayWithComputer(playerTurn.ChoiceId!.Value);
+        return _playService.PlayWithComputer(playerTurn.Player!.Value);
     }
 }

@@ -7,7 +7,7 @@ public class PlayerTurnValidator : AbstractValidator<PlayerTurn>
 {
 	public PlayerTurnValidator()
 	{
-		RuleFor(x => x.ChoiceId)
+		RuleFor(x => x.Player)
 			.NotNull()
 			.GreaterThanOrEqualTo(1)
 			.LessThanOrEqualTo(5);
