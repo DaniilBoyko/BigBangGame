@@ -1,5 +1,23 @@
 # BigBangGame
 
+The repo contains implementation of the game from the “The Big Bang Theory” called Rock, Paper, Scissors, Lizard, Spock.
+
+## Implemented items:
+
+&#9989; Implement game server
+
+&#9989; A scoreboard with the 10 most recent results
+
+&#9989; Allow the scoreboard to be reset
+
+&#9989; Provide a Dockerfile to run a containerized version of your service
+
+&#10060; Implement moder UI 
+
+&#10060; Allow multiple users to play on the same service
+
+
+
 # Running and Testing Locally
 
 ### Pre-reqs
