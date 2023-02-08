@@ -24,3 +24,16 @@ docker compose up -d
 ```
 
 Enter http://localhost:8000/swagger in a browser to see the application running
+
+
+# Local Running
+
+## BigBangGame.Server Running
+
+Go to the ./BigBangGame/BigBangGame.Server folder and run
+
+```bash
+dotnet run
+```
+
+Enter http://localhost:5095/swagger in a browser to see the application running
