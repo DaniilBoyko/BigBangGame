@@ -51,7 +51,7 @@ internal class PlayServiceTests
 
         var gameResult = _sut.PlayWithComputer((int)userChoice);
 
-        gameResult.Result.Should().Be(GameResult.Win.ToString());
+        gameResult.Results.Should().Be(GameResult.Win.ToString());
     }
 
     [Test]
@@ -67,7 +67,7 @@ internal class PlayServiceTests
 
         var gameResult = _sut.PlayWithComputer((int)userChoice);
 
-        gameResult.Result.Should().Be(GameResult.Tie.ToString());
+        gameResult.Results.Should().Be(GameResult.Tie.ToString());
     }
 
     [Test]
@@ -88,7 +88,7 @@ internal class PlayServiceTests
 
         var gameResult = _sut.PlayWithComputer((int)userChoice);
 
-        gameResult.Result.Should().Be(GameResult.Lose.ToString());
+        gameResult.Results.Should().Be(GameResult.Lose.ToString());
     }
 
     private void ReplaceComputerGameChoice(GameChoice gameChoice)
