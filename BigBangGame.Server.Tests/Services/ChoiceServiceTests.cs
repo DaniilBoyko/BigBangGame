@@ -8,7 +8,7 @@ namespace BigBangGame.Server.Tests.Services;
 
 internal class ChoiceServiceTests
 {
-    private readonly IChoiceService _sut;
+    private readonly IChoiceStorage _sut;
 
     public ChoiceServiceTests()
     {
@@ -17,13 +17,13 @@ internal class ChoiceServiceTests
             mc.AddProfile(new MappingProfile());
         }).CreateMapper();
 
-        _sut = new ChoiceService(mapper);
+        _sut = new ChoiceStorage(mapper);
     }
 
     [Test]
     public void GetAvailableChoices_Rerun5Choices()
     {
-        var choices = _sut.GetAvailableChoices().ToList();
+        var choices = _sut.GetChoices().ToList();
 
         choices.Should().HaveCount(5);
     }
@@ -36,7 +36,7 @@ internal class ChoiceServiceTests
     [TestCase(5, "lizard")]
     public void GetAvailableChoices_ShouldHaveCorrectNames(int choiceId, string name)
     {
-        var choices = _sut.GetAvailableChoices().ToList();
+        var choices = _sut.GetChoices().ToList();
         var choice = choices.FirstOrDefault(x => x.Id == choiceId);
 
         choice.Should().NotBeNull();
